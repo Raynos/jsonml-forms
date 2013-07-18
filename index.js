@@ -7,7 +7,11 @@ module.exports = {
     },
     tuple: {
         input: tupleInput
-    }
+    },
+    boolean: {
+        checkbox: booleanCheckbox
+    },
+    button: button
 }
 
 function normalize(name, opts) {
@@ -26,6 +30,31 @@ function normalize(name, opts) {
 
     return opts
 }
+
+function button(opts) {
+    opts = normalize("button", opts)
+
+    return ["button.button.form-elem", {
+        "data-marker": "forms." + opts.marker
+    }, opts.label]
+}
+
+function booleanCheckbox(opts) {
+    opts = normalize("booleanCheckbox", opts)
+
+    return [".boolean-checkbox.form-elem" + (opts.selector || ""), [
+        ["input.input", {
+            type: "checkbox",
+            checked: !!opts.checked,
+            "data-marker": "forms." + opts.marker
+        }],
+        ["label.label", [ opts.label ]],
+        [".error", {
+            "data-marker": "errors." + opts.marker
+        }]
+    ]]
+}
+
 
 function tupleInput(opts) {
     if (!opts.marker) {
