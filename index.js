@@ -4,6 +4,9 @@ module.exports = {
     string: {
         input: stringInput,
         password: stringPassword
+    },
+    tuple: {
+        input: tupleInput
     }
 }
 
@@ -22,6 +25,31 @@ function normalize(name, opts) {
     }
 
     return opts
+}
+
+function tupleInput(opts) {
+    if (!opts.marker) {
+        throw new Error("tupleInput(opts): opts.marker is required " +
+            JSON.stringify(opts))
+    }
+
+    return [".tuple-input.form-elem" + (opts.selector || ""), [
+        ["label.label", opts.label],
+        ["input.input", {
+            placeholder: opts.placeholder[0],
+            "data-marker": "form." + opts.marker[0]
+        }],
+        [".error", {
+            "data-marker": "errors." + opts.marker[0]
+        }],
+        ["input.input", {
+            placeholder: opts.placeholder[1],
+            "data-marker": "form." + opts.marker[1]
+        }],
+        [".error", {
+            "data-marker": "errors." + opts.marker[1]
+        }]
+    ]]
 }
 
 function stringInput(opts) {
