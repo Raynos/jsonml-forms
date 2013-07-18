@@ -35,7 +35,7 @@ function button(opts) {
     opts = normalize("button", opts)
 
     return ["button.button.form-elem", {
-        "data-marker": "forms." + opts.marker
+        "data-marker": "form." + opts.marker
     }, opts.label]
 }
 
@@ -46,7 +46,7 @@ function booleanCheckbox(opts) {
         ["input.input", {
             type: "checkbox",
             checked: !!opts.checked,
-            "data-marker": "forms." + opts.marker
+            "data-marker": "form." + opts.marker
         }],
         ["label.label", [ opts.label ]],
         [".error", {
