@@ -34,7 +34,7 @@ function tupleInput(opts) {
     }
 
     return [".tuple-input.form-elem" + (opts.selector || ""), [
-        ["label.label", opts.label],
+        ["label.label", [ opts.label ]],
         ["input.input", {
             placeholder: opts.placeholder[0],
             "data-marker": "form." + opts.marker[0]
@@ -56,7 +56,7 @@ function stringInput(opts) {
     opts = normalize("stringInput", opts)
 
     return [".string-input.form-elem" + (opts.selector || ""), [
-        ["label.label", opts.label],
+        ["label.label", [ opts.label ]],
         ["input.input", {
             placeholder: opts.placeholder,
             "data-marker": "form." + opts.marker
@@ -71,7 +71,7 @@ function stringPassword(opts) {
     opts = normalize("stringPassword", opts)
 
     return [".string-password.form-elem" + (opts.selector || ""), [
-        ["label.label", opts.label],
+        ["label.label", [ opts.label ]],
         ["input.input", {
             placeholder: opts.placeholder,
             "data-marker": "form." + opts.marker,
