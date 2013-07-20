@@ -1,5 +1,5 @@
 var uuid = require("uuid")
-var spaced = require("./spaced.js")
+var spaced = require("./lib/spaced.js")
 
 module.exports = tupleInput
 
