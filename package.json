@@ -1,6 +1,6 @@
 {
   "name": "jsonml-forms",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A set of functions to generate form elements",
   "keywords": [],
   "author": "Raynos <raynos2@gmail.com>",
