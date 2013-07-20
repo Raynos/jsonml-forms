@@ -23,7 +23,10 @@ function enumDropdown(opts) {
                     option = { text: option, value: option }
                 }
 
-                return ["option", { value: option.value }, option.text]
+                return ["option", {
+                    value: option.value,
+                    selected: opts.value && option.value === opts.value
+                }, option.text]
             }) }
         ]],
         error(opts.marker)
