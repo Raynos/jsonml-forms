@@ -3,7 +3,8 @@ var isCamelCase = /([a-z][A-Z])/g
 module.exports = {
     string: {
         input: stringInput,
-        password: stringPassword
+        password: stringPassword,
+        dropdown: stringDropdown
     },
     tuple: {
         input: tupleInput
@@ -43,6 +44,12 @@ function button(opts) {
     }, opts.label]
 }
 
+function error(marker) {
+    return [".error", {
+        "data-marker": "errors." + marker
+    }]
+}
+
 function booleanCheckbox(opts) {
     opts = normalize("booleanCheckbox", opts)
 
@@ -54,9 +61,7 @@ function booleanCheckbox(opts) {
             "data-marker": "form." + opts.marker
         }],
         ["label.label", [ opts.label ]],
-        [".error", {
-            "data-marker": "errors." + opts.marker
-        }]
+        error(opts.marker)
     ]]
 }
 
@@ -92,6 +97,30 @@ function tupleInput(opts) {
     ]]
 }
 
+function stringDropdown(opts) {
+    opts = normalize("stringDropdown", opts)
+
+    if (!opts.options) {
+        throw new Error("stringDropdown(opts): opts.options is required " +
+            JSON.stringify(opts))
+    }
+
+    return [".string-dropdown.form-elem" + (opts.selector || ""), [
+        ["label.label", [ opts.label ]],
+        ["select.input", {
+            name: opts.name,
+            "data-marker": "forms." + opts.marker
+        }, opts.options.map(function (option) {
+            if (typeof option === "string") {
+                option = { text: option, value: option }
+            }
+
+            return ["option", { value: option.value }, option.text]
+        })],
+        error(opts.marker)
+    ]]
+}
+
 function stringInput(opts) {
     opts = normalize("stringInput", opts)
 
@@ -102,9 +131,7 @@ function stringInput(opts) {
             name: opts.name,
             "data-marker": "form." + opts.marker
         }],
-        [".error", {
-            "data-marker": "errors." + opts.marker
-        }]
+        error(opts.marker)
     ]]
 }
 
@@ -119,9 +146,7 @@ function stringPassword(opts) {
             "data-marker": "form." + opts.marker,
             type: "password"
         }],
-        [".error", {
-            "data-marker": "errors." + opts.marker
-        }]
+        error(opts.marker)
     ]]
 }
 
