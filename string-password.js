@@ -7,10 +7,11 @@ function stringPassword(opts) {
     opts = normalize("stringPassword", opts)
 
     return [".string-password.form-elem" + (opts.selector || ""), [
-        ["label.label", [ opts.label ]],
+        ["label.label", { "for": opts.id }, [ opts.label ]],
         ["input.input", {
             placeholder: opts.placeholder,
             name: opts.name,
+            id: opts.id,
             "data-marker": "form." + opts.marker,
             type: "password"
         }],

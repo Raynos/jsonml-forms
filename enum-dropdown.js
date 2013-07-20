@@ -12,9 +12,10 @@ function enumDropdown(opts) {
     }
 
     return [".string-dropdown.form-elem" + (opts.selector || ""), [
-        ["label.label", [ opts.label ]],
+        ["label.label", { "for": opts.id }, [ opts.label ]],
         ["select.input", {
             name: opts.name,
+            id: opts.id,
             "data-marker": "forms." + opts.marker
         }, [
             ["option", { selected: true, value: "" }, opts.placeholder],

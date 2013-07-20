@@ -11,9 +11,10 @@ function booleanCheckbox(opts) {
             type: "checkbox",
             checked: !!opts.checked,
             name: opts.name,
+            id: opts.id,
             "data-marker": "form." + opts.marker
         }],
-        ["label.label", [ opts.label ]],
+        ["label.label", { "for": opts.id }, [ opts.label ]],
         error(opts.marker)
     ]]
 }

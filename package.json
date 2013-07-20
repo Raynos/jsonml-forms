@@ -16,7 +16,9 @@
     "url": "https://github.com/Raynos/jsonml-forms/issues",
     "email": "raynos2@gmail.com"
   },
-  "dependencies": {},
+  "dependencies": {
+    "uuid": "~1.4.1"
+  },
   "devDependencies": {
     "tape": "~1.0.2",
     "jsonml-document": "~0.1.0"

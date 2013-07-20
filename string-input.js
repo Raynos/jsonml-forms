@@ -7,10 +7,11 @@ function stringInput(opts) {
     opts = normalize("stringInput", opts)
 
     return [".string-input.form-elem" + (opts.selector || ""), [
-        ["label.label", [ opts.label ]],
+        ["label.label", { "for": opts.id }, [ opts.label ]],
         ["input.input", {
             placeholder: opts.placeholder,
             name: opts.name,
+            id: opts.id,
             "data-marker": "form." + opts.marker
         }],
         error(opts.marker)
