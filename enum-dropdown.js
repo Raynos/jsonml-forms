@@ -16,7 +16,7 @@ function enumDropdown(opts) {
         ["select.input", {
             name: opts.name,
             id: opts.id,
-            "data-marker": "forms." + opts.marker
+            "data-marker": "form." + opts.marker
         }, [
             ["option", { selected: true, value: "" }, opts.placeholder],
             { fragment: opts.options.map(function (option) {
