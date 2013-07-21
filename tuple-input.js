@@ -12,7 +12,7 @@ function tupleInput(opts) {
             placeholder: opts.placeholder[0],
             name: opts.name[0],
             id: opts.id,
-            value: opts.value,
+            value: opts.value[0],
             "data-marker": "form." + opts.marker[0]
         }],
         [".error", {
@@ -21,7 +21,7 @@ function tupleInput(opts) {
         ["input.input", {
             placeholder: opts.placeholder[1],
             name: opts.name[1],
-            value: opts.value,
+            value: opts.value[1],
             "data-marker": "form." + opts.marker[1]
         }],
         [".error", {
