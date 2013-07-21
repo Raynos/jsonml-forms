@@ -12,6 +12,7 @@ function stringInput(opts) {
             placeholder: opts.placeholder,
             name: opts.name,
             id: opts.id,
+            value: opts.value || "",
             "data-marker": "form." + opts.marker
         }],
         error(opts.marker)

@@ -12,6 +12,7 @@ function tupleInput(opts) {
             placeholder: opts.placeholder[0],
             name: opts.name[0],
             id: opts.id,
+            value: opts.value,
             "data-marker": "form." + opts.marker[0]
         }],
         [".error", {
@@ -20,6 +21,7 @@ function tupleInput(opts) {
         ["input.input", {
             placeholder: opts.placeholder[1],
             name: opts.name[1],
+            value: opts.value,
             "data-marker": "form." + opts.marker[1]
         }],
         [".error", {
@@ -50,6 +52,10 @@ function normalize(name, opts) {
 
     if (!opts.id) {
         opts.id = uuid() + "~" + opts.name[0]
+    }
+
+    if (!opts.value) {
+        opts.value = ["", ""]
     }
 
     return opts
