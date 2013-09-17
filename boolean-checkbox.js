@@ -14,7 +14,7 @@ function booleanCheckbox(opts) {
             id: opts.id,
             "data-marker": "form." + opts.marker
         }],
-        ["label.label", { "for": opts.id }, [ opts.label ]],
+        opts.label ? ["label.label", { "for": opts.id }, [ opts.label ]] : null,
         error(opts.marker)
     ]]
 }

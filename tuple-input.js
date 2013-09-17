@@ -7,7 +7,7 @@ function tupleInput(opts) {
     opts = normalize("tupleInput", opts)
 
     return [".tuple-input.form-elem" + (opts.selector || ""), [
-        ["label.label", { "for": opts.id }, [ opts.label ]],
+        opts.label ? ["label.label", { "for": opts.id }, [ opts.label ]] : null,
         ["input.input", {
             placeholder: opts.placeholder[0],
             name: opts.name[0],

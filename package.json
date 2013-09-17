@@ -21,7 +21,8 @@
   },
   "devDependencies": {
     "tape": "~1.0.2",
-    "jsonml-document": "~0.1.0"
+    "jsonml-document": "~0.1.0",
+    "jsonml-stringify": "~0.3.23"
   },
   "licenses": [
     {

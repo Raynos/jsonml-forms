@@ -7,7 +7,7 @@ function stringPassword(opts) {
     opts = normalize("stringPassword", opts)
 
     return [".string-password.form-elem" + (opts.selector || ""), [
-        ["label.label", { "for": opts.id }, [ opts.label ]],
+        opts.label ? ["label.label", { "for": opts.id }, [ opts.label ]] : null,
         ["input.input", {
             placeholder: opts.placeholder,
             name: opts.name,
