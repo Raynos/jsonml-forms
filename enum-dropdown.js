@@ -11,7 +11,7 @@ function enumDropdown(opts) {
             JSON.stringify(opts))
     }
 
-    return [".string-dropdown.form-elem" + (opts.selector || ""), [
+    return [".enum-dropdown.form-elem" + (opts.selector || ""), [
         opts.label ? ["label.label", { "for": opts.id }, [ opts.label ]] : null,
         ["select.input", {
             name: opts.name,

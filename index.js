@@ -4,7 +4,8 @@ module.exports = {
         password: require("./string-password.js")
     },
     enum: {
-        dropdown: require("./enum-dropdown.js")
+        dropdown: require("./enum-dropdown.js"),
+        checkbox: require("./enum-checkbox.js")
     },
     tuple: {
         input: require("./tuple-input.js")
