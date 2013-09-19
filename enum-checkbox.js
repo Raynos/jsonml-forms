@@ -18,6 +18,11 @@ function enumCheckbox(opts) {
         marker = marker = "[]"
     }
 
+    var values = opts.value || []
+    if (!Array.isArray(values)) {
+        values = [values]
+    }
+
     return [".enum-checkbox.form-elem" + (opts.selector || ""), [
         opts.label ? ["label.label", { "for": opts.id }, [ opts.label ]] : null,
         [".checkbox-array", opts.options.map(function (option) {
@@ -25,7 +30,8 @@ function enumCheckbox(opts) {
                 ["input", {
                     type: "checkbox",
                     name: opts.name,
-                    "data-marker": "form." + marker
+                    "data-marker": "form." + marker,
+                    checked: values.indexOf(option.value) !== -1
                 }],
                 option.text
             ]]
