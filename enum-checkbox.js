@@ -15,7 +15,7 @@ function enumCheckbox(opts) {
 
     var marker = opts.marker
     if (!isArray.test(marker)) {
-        marker = marker = "[]"
+        marker = marker + "[]"
     }
 
     var values = opts.value || []
