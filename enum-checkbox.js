@@ -30,6 +30,8 @@ function enumCheckbox(opts) {
                 ["input", {
                     type: "checkbox",
                     name: opts.name,
+                    value: typeof option.value === "string" ?
+                        option.value : false,
                     "data-marker": "form." + marker,
                     checked: values.indexOf(option.value) !== -1
                 }],
