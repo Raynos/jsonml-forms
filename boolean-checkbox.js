@@ -11,6 +11,7 @@ function booleanCheckbox(opts) {
             type: "checkbox",
             checked: !!opts.checked,
             name: opts.name,
+            value: typeof opts.value === "string" ? opts.value : false,
             id: opts.id,
             "data-marker": "form." + opts.marker
         }],
